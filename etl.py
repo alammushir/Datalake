@@ -31,6 +31,13 @@ def create_spark_session():
 def process_song_data(spark, input_data, output_data):
     '''
     Process song data files and write the results to S3
+    
+    Parameters:
+        spark: spark cursor
+        input_data: S3 folder where song and event log files are
+        output_data: S3 folder where results will be saved
+        
+    Returns: None
     '''    
     # get filepath to song data file
     song_data = input_data + "song_data/A/A/A/*.json"
@@ -71,6 +78,13 @@ def process_song_data(spark, input_data, output_data):
 def process_log_data(spark, input_data, output_data):
     '''
     Process log files and write the results to S3 output folder
+        
+    Parameters:
+        spark: spark curson
+        input_data: S3 folder where song and event log files are
+        output_data: S3 folder where results will be saved
+        
+    Returns: None
     '''
     # get filepath to log data file
     log_data = input_data + "log_data/*/*/*.json"
